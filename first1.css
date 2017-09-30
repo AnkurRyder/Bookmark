@@ -1,0 +1,180 @@
+body{
+	  background-color: #333;
+  color: #333;
+  font-family: 'Raleway', sans-serif;
+  margin-top :0px;
+  margin-left: -1px;
+}
+
+#menu-nav{
+  position: fixed;
+  float:left;
+  width:100%;
+  height:auto;
+  background-color:#ecf0f1;
+  border-radius:4px;
+  overflow:hidden;
+  box-shadow:0 0 5px rgba(0,0,0,0.3);
+}
+
+#navigation-bar {
+  width:100%;
+}
+
+#navigation-bar ul {
+    margin:0; padding:0;
+    list-style:none;
+    width:100%;
+    border-radius:4px;
+    overflow:hidden;
+}
+#navigation-bar li {
+    float:left;
+    padding:0; 
+    margin:0;
+    width:33%;
+}
+#navigation-bar a {
+    color:#84848;
+    font-size:20px; 
+    text-decoration:none; text-align:center;
+    width:100%;
+    padding:10px 0;
+    display:block; position:relative;
+    transition: all 0.3s ease;
+}
+#navigation-bar a:hover {color:#e74c3c;}
+
+#navigation-bar a:before {
+  content:'';
+  transition:all .4s ease-in-out;
+  position:absolute; right:50%; left:50%; bottom:0;
+  display:block;
+  height:2px;
+  background-color:#e74c3c;
+} 
+
+#navigation-bar li:hover a:before, #navigation-bar a:hover:before {right:0; left:0;}
+#navigation-bar span {display:block;}
+
+
+.quote-box {
+  border-radius: 3px;
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%,-50%);
+  width: 350px;
+  padding: 40px 50px;
+  display: table;
+  background-color: #fff;
+}
+.quote-box .quote-text {
+  text-align: center; 
+  width: 100%;
+  height: auto;
+  clear: both;
+  font-weight: 500;
+  font-size: 1.75em;
+}
+
+.quote-box .quote-text i {
+  font-size: 1.0em;
+  margin-right: 0.4em;
+}
+.quote-box .buttons {
+  width: 350px;
+  margin: auto;
+  display: block;
+}
+
+.quote-box .buttons .button {
+  height: 38px;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  background-color: #333;
+  outline: none;
+  font-size: 0.85em;
+  padding: 8px 18px 6px 18px;
+  margin-top: -35px;
+  opacity: 1;
+  cursor: pointer;
+}
+.quote-box .buttons .button:hover {
+  opacity: 0.9;
+}
+
+.quote-box .buttons .button#new-quote {
+  float: right;
+}
+
+.bsdbox-wrap {
+  display: block;
+  margin: 14px auto;
+  position: relative;
+}
+
+.bsdbox-wrap .bsdextend {
+  width: 50%;
+  display: block;
+}
+
+.bsdextend {
+	list-style: none;
+  text-align: center;
+  font-size: 19px;
+  margin-top: 0px;
+}
+
+.bsdextend .bsdbox-icon {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  width: 32%;
+}
+
+.bsdextend .bsdbox-icon a {
+  position: relative;
+  background: #768187;
+  display: inline-block;
+  font-weight: 410;
+  color: #fefefe;
+  padding: 0 12px;
+  line-height: 32px;
+  border-radius: 4px;
+  font-size: 11px;
+  width: 100%;
+}
+
+.bsdextend .bsdbox-icon i {
+  font-family: fontawesome;
+  margin: 0 4px 0 0
+}
+
+.bsdbox-icon.facebook a {
+  background: #3b5998;
+}
+
+
+.bsdbox-icon.facebook a:hover,
+{
+  background: #415471;
+
+}
+
+.extender .bsdbox-icon:hover a,
+.extender .bsdbox-icon a:hover {
+  color: #fefefe;
+}
+
+.bsdbox-info {
+  margin: 11px 0 0 0;
+  font-size: 12px;
+  text-align: center;
+}
+
+.bsdbox-info p {
+  margin: 6px 0;
+}
