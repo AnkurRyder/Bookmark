@@ -14,7 +14,7 @@
   overflow:hidden;
   box-shadow:0 0 5px rgba(0,0,0,0.3);
   margin-top: -5px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
 #navigation-bar {
@@ -57,3 +57,39 @@
 
 #navigation-bar li:hover a:before, #navigation-bar a:hover:before {right:0; left:0;}
 #navigation-bar span {display:block;}
+
+#unique{
+  margin-bottom: 5%;
+}
+#search1{
+  margin-left: 5%;
+  margin-right: 25%;
+
+}
+
+#searchbutton:hover{
+  cursor: pointer;
+  color:#e74c3c;
+}
+
+#trash{
+  cursor: pointer;
+}
+#bookmarks{
+  margin-left: 5%;
+  margin-bottom: 20px ;
+  background-color:#ecf0f1; 
+}
+
+#index{
+  margin-left: 5%;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+}
+thead{
+  border:1px solid black;
+}
+
+.ro{
+  border-bottom: 1px solid #ddd;
+}
