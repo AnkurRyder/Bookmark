@@ -2,8 +2,8 @@ body{
 	  background-color: #ecf0f1;
   font-family: 'Raleway', sans-serif;
   margin-top :0px;
-  margin-left: -1px;
-  margin-right: -1px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 #menu-nav{
@@ -33,7 +33,7 @@ body{
     float:left;
     padding:0; 
     margin:0;
-    width:33%;
+    width:25%;
 }
 #navigation-bar a {
     color:#84848;
