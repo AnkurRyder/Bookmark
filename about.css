@@ -1,19 +1,19 @@
-<body{
+body{
 	  background-color: #ecf0f1;
   font-family: 'Raleway', sans-serif;
-  margin-top :0px;
 }
 
 #menu-nav{
-  position: relative;
+  position: fixed;
   float:left;
   width:100%;
   height:auto;
-  background-color:#ecf0f1;
+  background-color:#444;
   border-radius:4px;
   overflow:hidden;
   box-shadow:0 0 5px rgba(0,0,0,0.3);
-  margin-top: -6px;
+  margin-top: -8px;
+  margin-left: -8px;
   margin-bottom: 100px;
 }
 
@@ -36,7 +36,7 @@
     width:25%;
 }
 #navigation-bar a {
-    color:#84848;
+    color:#ecf0f1;
     font-size:20px; 
     text-decoration:none; text-align:center;
     width:100%;
