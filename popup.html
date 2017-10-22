@@ -1,0 +1,248 @@
+<style type="text/css">
+/* Set a style for all buttons */
+
+button {
+
+    background-color: #2f2f2f;
+
+    color: white;
+
+    padding: 6px 2px;
+
+    margin: 3px 0;
+
+    border: none;
+
+    cursor: pointer;
+
+    width: 100%;
+
+}
+
+
+
+button:hover {
+
+    opacity: 0.7;
+
+}
+
+
+.container{
+  width:300px;
+}
+
+
+
+
+/* The Modal (background) */
+
+.modal {
+
+  left :65%;
+
+  top:10%;
+
+
+
+    display: none; /* Hidden by default */
+
+     /* Stay in place */
+
+     float: right;
+
+    z-index: 1; /* Sit on top */
+
+    padding:1% 1% 1% 1%;
+
+    width: 32%; /* Full width */
+
+    height:500px;
+
+   /* Enable scroll if needed */
+
+    background-color: rgb(0,0,0); /* Fallback color */
+
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+
+
+}
+
+
+
+/* Modal Content/Box */
+
+.modal-content {
+
+    background-color: #fefefe;
+
+
+
+    border: 1px solid #888;
+
+ }
+
+
+
+.close:hover,
+
+.close:focus {
+
+    color: red;
+
+    cursor: pointer;
+
+}
+
+
+  .js-link, #option{
+  -webkit-transition: background .35s ease;
+  transition: background .35s ease;
+}
+
+/*Base*/
+* {
+  box-sizing: border-box;
+}
+
+
+/*Typography*/
+#drops{
+  font: 16px Verdana;
+}
+
+/*Layout*/
+/*Dropdown*/
+.dropdown {
+  border: .1em solid #c0cdd1;
+}
+
+#link {
+
+  display: block;
+  padding: .5em;
+  color: #000;
+  text-decoration: none;
+}
+
+#ajsa{
+  float:right;
+}
+#link:focus, #link:hover {
+  background: #ecf0f1;
+}
+#link:active {
+  background: #fbfcfc;
+}
+
+
+
+/*List*/
+#drop{
+    margin-left:-35px;
+    list-style-type:none;
+  display: none;
+}
+
+#dropdrop{
+    width:inherit;
+}
+#option{
+    font-size: 1em;
+  padding: .5em;
+  cursor: pointer;
+}
+#option:not(:first-child) {
+  border-top: .1em dashed #dde4e6;
+}
+#option:last-child {
+  color: #ad0000;
+}
+#option:focus, #option:hover {
+  background: #ecf0f1;
+}
+#option:active {
+  background: #fbfcfc;
+}
+
+</style>
+
+<head>
+  <script src="jquery.js"></script>
+
+  <script src="popup.js"></script>
+  <script src="cloud.js"></script>
+  <link href="bootstrap.min.css" rel="stylesheet">
+  </head>
+<body>
+ <div class="container">
+
+    	<center><h4  style="color:red;font-weight:700;">Add bookmarks</h4></center>
+
+
+
+      <label><b>Title :</b></label>
+
+      <input type="text" placeholder="Enter Title" name="uname" required style="border: 2px solid red" id="title">
+      <br/>
+        <br>
+
+      <label><b>Tag :</b></label>
+      <div id="drops" class="dropdown">
+          <a href="#" class="js-link" id="link">Select one option <i class="fa fa-chevron-down" id="ajsa"></i></a>
+          <ul class="js-dropdown-list"id="drop">
+              <table id="dropdrop">
+                  <tr>
+                      <td><li id="option">Option 1</li></td>
+                      <td><li id="option">Option 2</li></td>
+                      <td><li id="option">Option 3</li></td>
+                      <td><li id="option">Option 1</li></td>
+                      </tr>
+                      <tr>
+                      <td><li id="option">Option 1</li></td>
+                      <td><li id="option">Option 2</li></td>
+                      <td><li id="option">Option 3</li></td>
+                      <td><li id="option">Option 1</li></td>
+                      </tr>
+                      <tr>
+                      <td><li id="option">Option 1</li></td>
+                      <td><li id="option">Option 2</li></td>
+                      <td><li id="option">Option 3</li></td>
+                      <td><li id="option">Option 1</li></td>
+                      </tr>
+                      </table>
+          </ul>
+         </div>
+      <br>
+
+      <label><b>URL :</b></label>
+
+      <input type="text" placeholder="url" name="psw" required style="border: 2px solid red" id="url">
+
+
+
+      <table width="50%">
+
+        <tr>
+
+          <td id="bottom_but">
+
+      <button type="button" id="sub" onclick="document.getElementById('id01').style.display='none';window.location.reload()">Submit</button>
+
+    </td>
+
+    <td>
+
+       <button type="button" onclick="document.getElementById('id01').style.display='none';window.location.reload()" class="cancelbtn">Cancel</button>
+
+     </td>
+
+      </tr>
+
+    </table>
+
+    </div>
+
+  </form>
+</body>
