@@ -8,7 +8,6 @@
 ![HTML](https://img.shields.io/badge/HTML-5.svg)
 ![CSS](https://img.shields.io/badge/CSS-3.svg)
 
-* Files for the online bookmark site*  
 [Check It Here](https://bookmarks.pythonanywhere.com/)  
 
 ## About Project
