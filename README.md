@@ -5,6 +5,7 @@
 [![License : MIT](https://img.shields.io/npm/l/express.svg)](https://ankur.mit-license.org/)
 ![Python: 3](https://img.shields.io/badge/Python-3.0-red.svg)
 ![Django: 2.0](https://img.shields.io/badge/Django-2.0-red.svg)
+![JavaScript](https://img.shields.io/badge/JavaScript-red.svg)
 ![HTML](https://img.shields.io/badge/HTML-5.svg)
 ![CSS](https://img.shields.io/badge/CSS-3.svg)
 
