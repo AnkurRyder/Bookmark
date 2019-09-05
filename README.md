@@ -21,7 +21,7 @@
 
 Feel free to submit a pull request or an issue. Sugest new features on issue tracker.
 **OR**  
-You can [tweet me](https://twitter.com/ItsAnkurJ) if library helps.
+You can [tweet me](https://twitter.com/ItsAnkurJ) if you enjoy using it.
 
 ## License
 
