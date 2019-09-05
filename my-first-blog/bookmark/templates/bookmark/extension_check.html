@@ -1,0 +1,35 @@
+
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
+</head>
+<body style="width: 400px">
+<button type="button" id ="clicked">Click me</button>
+</body>
+</html>
+
+<script>
+title ="extension is working";
+tag= "succes";
+url="www.bookmarks.pythonanywhere.com";
+ $(document).ready(function(){
+    $("button").click(function(){
+        
+        $.ajax({
+            type:'GET',
+            url:'/add_get',
+            data:{
+                'title':title,
+                'tag':tag,
+                'ur':url
+                
+            },
+            dataType: 'json',
+            sucess:function(data){
+                alert(" gf");
+            },
+        });
+    });
+});
+
+</script>

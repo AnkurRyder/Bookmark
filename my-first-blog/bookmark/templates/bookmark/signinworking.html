@@ -1,0 +1,76 @@
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<html>
+
+     {% if user.is_authenticated %}
+     <li>User: {{ user.get_username }}</li>
+     <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
+   {% else %}
+     <li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
+   {% endif %}
+
+
+<meta name="google-signin-client_id" content="311616888813-pp61u0pi57kaj7ulqiute6dnes07co8k.apps.googleusercontent.com">
+<div class="g-signin2" data-onsuccess="onSignIn"></div>
+<script>
+
+    function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+
+  var email_id = profile.getEmail();
+
+        $.ajax({
+
+        url: '/verify',
+        data: {
+          'email_id': email_id
+        },
+        dataType: 'json',
+        success: function (data) {
+          if (data.is_verified) {
+            window.open("https://bookmarks.pythonanywhere.com/","_self")
+          }
+          else {
+              window.open("https://bookmarks.pythonanywhere.com/contact","_self")
+              
+          }
+        }
+      });
+
+}
+
+
+</script>
+
+
+<a href="#" onclick="signOut();">Sign out</a>
+<script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+</script>
+
+<a href= "/"> dashboard</a>
+<br>
+<a href="/getting-started">Getting Started</a>
+<br>
+<a href="/contact"> Contact Us</a>
+<br>
+{% if user.is_authenticated %}
+ <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
+ {% else %}
+<li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
+{% endif %}
+<a href="/accounts/password_change">Pasword Change</a>
+<br>
+
+</html>

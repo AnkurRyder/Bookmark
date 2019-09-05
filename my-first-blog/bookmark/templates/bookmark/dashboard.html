@@ -1,0 +1,1138 @@
+
+<!DOCTYPE html>
+
+
+
+<html>
+<head>
+	<title>Global Bookmark</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+  <script  type="text/javascript" language="javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+  </script>
+    <script  type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.4.js">
+  </script>
+  <script  type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js ">
+  </script>
+  <script  type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js ">
+  </script>
+
+  <script>
+$(document).ready(function() {
+    // Setup - add a text input to each footer cell
+    $('#bookmarks tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
+
+    // DataTable
+    var table = $('#bookmarks').DataTable();
+
+    // Apply the search
+    table.columns([0]).every( function () {
+        var that = this;
+
+        $( 'input', this.footer() ).on( 'keyup change', function () {
+            if ( that.search() !== this.value ) {
+                that
+                    .search( this.value )
+                    .draw();
+            }
+        } );
+    } );
+} );
+</script>
+
+
+
+
+</head>
+<body id="body">
+	<div id='menu-nav'>
+  		<div id='navigation-bar'>
+		    <ul>
+		      <li class='menu-sub-nav current-item'><a href='/'><i class='fa fa-home'></i><span>Global Bookmark</span></a></li>
+		      <li id="about" class='menu-sub-nav'><a href='/getting-started'><i class='fa fa-rocket'></i><span>Getting Started</span></a></li>
+		      <li id="contact" class='menu-sub-nav'><a href='/contact'><i class='fa fa-book'></i><span>Contact</span></a></li>
+		       <li id="user" class='menu-sub-nav'><a href='/user'><i class='fa fa-user '></i><span>User</span></a></li>
+		    </ul>
+  		</div>
+	</div>
+
+
+    <div class="sidebar">
+    <div class="heading">
+        <i class='fa fa-tags'></i>Tags ::
+    </div>
+    <div class="content">
+
+ <a href="#">
+ <div class="siderow" style="display: flex; align-items: center; padding: 5px;margin-bottom:8px">
+  <div class="avatar" style="background-image: url(http://www.clker.com/cliparts/9/8/7/4/12826471671027353442camera.svg.thumb.png);"></div>
+ <div class="sidetag"  onclick="myBoobs(this)"> Entertainment</div>
+</div>
+</a>
+
+
+
+ <a href="#" ><div class="siderow" style="display: flex; align-items: center; padding: 5px;margin-bottom:8px"><div class="avatar" style="background-image: url(http://www.clker.com/cliparts/9/8/7/4/12826471671027353442camera.svg.thumb.png);"></div>
+ <div class="sidetag" onclick="myBoobs(this)"> Blog</div></div></a>
+
+ <a href="#"><div class="siderow" style="display: flex; align-items: center; padding: 5px;margin-bottom:8px"><div class="avatar" style="background-image: url(http://www.clker.com/cliparts/9/8/7/4/12826471671027353442camera.svg.thumb.png);"></div>
+ <div class="sidetag"  onclick="myBoobs(this)"> Learning</div></div></a>
+
+ <a href="#" ><div class="siderow" style="display: flex; align-items: center; padding: 5px;margin-bottom:8px"><div class="avatar" style="background-image: url(http://www.clker.com/cliparts/9/8/7/4/12826471671027353442camera.svg.thumb.png);"></div>
+ <div class="sidetag"  onclick="myBoobs(this)"> Proffesion</div></div></a>
+
+ <a href="#" ><div class="siderow" style="display: flex; align-items: center; padding: 5px;margin-bottom:8px"><div class="avatar" style="background-image: url(http://www.clker.com/cliparts/9/8/7/4/12826471671027353442camera.svg.thumb.png);"></div>
+ <div class="sidetag"  onclick="myBoobs(this)"> Important</div></div></a>
+
+ <a href="#" ><div class="siderow" style="display: flex; align-items: center; padding: 5px;margin-bottom:8px"><div class="avatar" style="background-image: url(http://www.clker.com/cliparts/9/8/7/4/12826471671027353442camera.svg.thumb.png);"></div>
+ <div class="sidetag"  onclick="myBoobs(this)"> Video</div></div></a>
+
+ <a href="#" ><div class="siderow" style="display: flex; align-items: center; padding: 5px;margin-bottom:8px"><div class="avatar" style="background-image: url(http://www.clker.com/cliparts/9/8/7/4/12826471671027353442camera.svg.thumb.png);"></div>
+ <div class="sidetag"  onclick="myBoobs(this)"> Social Media</div></div></a>
+
+ <a href="#" ><div class="siderow" style="display: flex; align-items: center; padding: 5px;margin-bottom:8px"><div class="avatar" style="background-image: url(http://www.clker.com/cliparts/9/8/7/4/12826471671027353442camera.svg.thumb.png);"></div>
+ <div class="sidetag"  onclick="myBoobs(this)"> News</div></div></a>
+
+ <a href="#" ><div class="siderow" style="display: flex; align-items: center; padding: 5px;margin-bottom:8px"><div class="avatar" style="background-image: url(http://www.clker.com/cliparts/9/8/7/4/12826471671027353442camera.svg.thumb.png);"></div>
+ <div class="sidetag"  onclick="myBoobs(this)"> Untagged</div></div></a>
+
+ <a href="#" ><div class="siderow" style="display: flex; align-items: center; padding: 5px;margin-bottom:8px"><div class="avatar" style="background-image: url(http://www.clker.com/cliparts/9/8/7/4/12826471671027353442camera.svg.thumb.png);"></div>
+ <div class="sidetag" onclick="myBoobs(this)"> Reserved</div></div></a>
+
+ <a href="#" ><div class="siderow" style="display: flex; align-items: center; padding: 5px;margin-bottom:8px"><div class="avatar" style="background-image: url(http://www.clker.com/cliparts/9/8/7/4/12826471671027353442camera.svg.thumb.png);"></div>
+ <div class="sidetag" onclick="myBoobs(this)"> Reserved</div></div></a>
+
+ <a href="#" ><div class="siderow" style="display: flex; align-items: center; padding: 5px;"><div class="avatar" style="background-image: url(http://www.clker.com/cliparts/9/8/7/4/12826471671027353442camera.svg.thumb.png);"></div>
+ <div class="sidetag" onclick="myBoobs(this)"> Reserved</div></div></a>
+</div>
+
+  </div>
+
+
+	<table style="width: 15%" id="unique">
+		<tr>
+			<td>
+				<button class="btn btn-dark" id="trash" title="Multiple Delete" onclick="document.getElementById('alert').style.display='none'"><i class="fa fa-trash"></i></button>
+			</td>
+			<td>
+				<button class="btn btn-dark" id="share" title="Multiple Share" onclick="document.getElementById('alert').style.display='none'" ><i class="fa fa-share-alt"></i></button>
+			</td>
+			<td >
+			    <button class="btn btn-dark" id="add" title="Add Bookmark" onclick="document.getElementById('id01').style.display='block';manthan() "><i class="fa fa-plus"></i>
+				</button>
+			</td>
+        </tr>
+    </table>
+<table style="margin-bottom:100px">
+    <tr>
+        <td>
+            <button class="btn btn-dark" id="multiple" title="Select bookmarks" onclick="document.getElementById('alert').style.display='block'">Select bookmarks
+				</button>
+        </td>
+        <td>
+            <p style="color:red; font-size:20px; margin-top:20px; margin-left:20px;display:none" id="alert" >
+                Select Bookmarks For Multiple Delete/Share.
+            </p>
+        </td>
+    </tr>
+</table>
+</div>
+
+	<table style="width:65%"id="main_body">
+	    <tr>
+	        <td>
+	<table style="width: 100%" id="bookmarks">
+		<thead>
+			<tr height="50px">
+                <th>Tag ::Title</th>
+				<th width="10%">Frequency</th>
+				<th width="20%">Date</th>
+				<th></th>
+
+			</tr>
+		</thead>
+	{% for bookmark in data %}
+		<tr class="ro" id="{{bookmark.pk}}">
+
+
+
+			<td id="title">
+				<a id="url_link" href="{{ bookmark.url }}" class="url" target="_blank" title="{{ bookmark.url }}" >{{ bookmark.title }}</a>
+			</td>
+			<td style="text-align:center;" class="freq">
+				{{ bookmark.freq }}
+			</td>
+			<td style="text-align:center;">
+				{{ bookmark.pub_date }}
+			</td>
+
+			<td style="text-align:center;" class="dels">
+				<button class="btn btn-link"  title="Delete" style="width:45%;cursor:pointer;"><i class="fa fa-trash"></i></button>
+				<button class="btn btn-link" id="trash" title="copy to clipboard" style="width:45%; margin-right:" onclick="myFuck(this)"><i class="fa fa-clipboard"></i></button>
+			</td>
+		</tr>
+		{% endfor %}
+	</table>
+	</td>
+	</tr>
+	</table>
+
+	<div id="id01" class="modal" style="position: absolute;">
+
+
+
+  <form class="modal-content animate" id="#send" >{% csrf_token %}
+
+    <div class="imgcontainer">
+
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+
+
+    </div>
+
+
+
+    <div class="container">
+
+    	<center><h4  style="color:red;font-weight:700;">Add bookmarks</h4></center>
+
+
+
+      <label><b>Title :</b></label>
+
+      <input type="text" placeholder="Enter Title" name="uname" required style="border: 2px solid red" id="title">
+      <br/>
+        <br>
+
+      <label><b>Tag :</b></label>
+      <div id="drops" class="dropdown">
+          <a href="#" class="js-link" id="link">Select one option <i class="fa fa-chevron-down" id="ajsa"></i></a>
+          <ul class="js-dropdown-list"id="drop">
+              <div style="overflow-x:auto;">
+              <table id="dropdrop">
+                  <tr>
+                      <td><li id="option">Entertainment</li></td>
+                      <td><li id="option">Blog</li></td>
+                      <td><li id="option">Learning</li></td>
+
+                      </tr>
+                      <tr>
+                          <td><li id="option">Proffesion</li></td>
+                      <td><li id="option">Important</li></td>
+                      <td><li id="option">Video</li></td>
+
+                      </tr>
+                      <tr>
+                          <td><li id="option">Social Media</li></td>
+                      <td><li id="option">news</li></td>
+                      <td><li id="option">Untaged</li></td>
+                      </tr>
+                      <tr>
+                          <td><li id="option">Reserved</li></td>
+                      <td><li id="option">Reserved</li></td>
+                      <td><li id="option">Reserved</li></td>
+                      </tr>
+                      </table>
+                      </div>
+          </ul>
+         </div>
+
+        <script type="text/javascript">
+
+        var text="untaged";
+            $(function() {
+  var list = $('.js-dropdown-list');
+  var link = $('.js-link');
+  link.click(function(e) {
+    e.preventDefault();
+    list.slideToggle(200);
+  });
+  list.find('li').click(function() {
+    text = $(this).html();
+    var icon = '<i class="fa fa-chevron-down"></i>';
+    link.html(text+icon);
+    list.slideToggle(200);
+
+  });
+});
+        </script>
+      <br>
+
+      <label><b>URL :</b></label>
+
+      <input type="text" placeholder="url" name="psw" required style="border: 2px solid red" id="url">
+
+
+
+      <table width="50%">
+
+        <tr>
+
+          <td id="bottom_but">
+
+      <button type="button" id="sub" onclick="document.getElementById('id01').style.display='none';window.location.reload()">Submit</button>
+
+    </td>
+
+    <td>
+
+       <button type="button" onclick="document.getElementById('id01').style.display='none';window.location.reload()" class="cancelbtn">Cancel</button>
+
+     </td>
+
+      </tr>
+
+    </table>
+
+    </div>
+
+  </form>
+
+</div>
+
+	<div id="bottom">
+	<footer id="footer">
+	    <a href="#">
+	        Privacy Statement
+	    </a>
+	    <br>
+	    <a href="#">
+	        Terms of Use
+	    </a>
+	</footer>
+	</div>
+</body>
+</html>
+
+<script type="text/javascript">
+function myFuck(x) {
+
+
+
+ var copyText = document.getElementById("bookmarks").rows[x.parentNode.rowIndex].cells[0].children[0].getAttribute('href');
+
+    var inp =document.createElement('input');
+    document.body.appendChild(inp);
+    inp.value =copyText;
+    inp.select();
+    document.execCommand('copy',false);
+    inp.remove();
+
+
+
+
+
+}
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+    $("#sub").click(function(){
+    // action goes here!!
+
+       /* var table = document.getElementById("bookmarks");
+        var row = table.insertRow(0);
+
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+
+        // Add some text to the new cells:
+        cell1.innerHTML = $('#title').val();
+        cell2.innerHTML = 1;
+        cell3.innerHTML = Date();*/
+
+        var url = $('#url').val();
+        var title = $('#title').val();
+        var tag = text;
+
+        if( !url.includes("http://") && !url.includes("https://") )
+        {   url = "http://" + String(url); }
+            tag = tag.toUpperCase();
+            title = String(tag) + " :: " + String(title);
+
+        $.ajax({
+            type:'POST',
+            url:'/add',
+            data:{
+                'title':title,
+                'tag':tag,
+                'ur':url,
+                'csrfmiddlewaretoken':$('input[name=csrfmiddlewaretoken]').val()
+            },
+            dataType: 'json',
+            sucess:function(data){
+                alert(" gf");
+            },
+        });
+    });
+});
+
+
+</script>
+
+<script>
+/*$(document).on('mouseenter', 'body' , function(){
+    $("#dele").removeClass("sorting");
+    $("#copys").removeClass("sorting");
+
+});*/
+
+$(document).on('click', 'td.dels', function(){
+
+    if (confirm("Are you surely want to delete this bookmark?!") == true) {
+        var pk = $(this).parent().attr("id");
+        $(this).parent().hide();
+
+     $.ajax({
+            type:'POST',
+            url:'/delete_bookmark',
+            data:{
+                'pk': pk,
+                'csrfmiddlewaretoken':$('input[name=csrfmiddlewaretoken]').val()
+            },
+            dataType: 'json',
+            sucess:function(data){
+                alert(" gf");
+            },
+        });
+    }
+    else {
+        return;
+    }
+
+
+});
+</script>
+
+<script>
+
+$(document).on('click', 'a.url', function(){
+
+    var pk = $(this).parent().parent().attr("id");
+    var fq= $(this).parent().next().text();
+    var ip =Number(Number(fq)+Number(1));
+    $(this).parent().next().text(ip);
+
+      $.ajax({
+            type:'POST',
+            url:'/update_frequency',
+            data:{
+                'pk': pk,
+                'csrfmiddlewaretoken':$('input[name=csrfmiddlewaretoken]').val()
+            },
+            dataType: 'json',
+            sucess:function(data){
+                alert(" gf");
+            },
+        });
+
+});
+</script>
+
+
+<style>
+.btn-dark{
+    cursor:pointer;
+}
+.sidebar{
+	margin-bottom: 100px;
+	top: 0;
+	position: -webkit-sticky;
+    position: sticky;
+	display: block;
+	float: right;
+	width: 250px;
+}
+
+.content{
+	overflow: scroll;
+	max-height: 650px;
+	background-color: white;
+}
+
+.heading{
+	font-family: Lato-Light,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
+	height: 1.4em;
+	margin:20px 0 10px;
+	padding-bottom: 5px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: black;
+	font-size: 1.6em;
+
+}
+
+.avatar{
+	min-width: 30px;
+	min-height: 30px;
+	border-radius: 100%;
+	background-size: cover;
+	background-position: 50%;
+}
+.siderow {
+    background-color:whitesmoke;
+}
+.siderow:hover {
+	background-color: #e1e1e1;
+	padding: 5px;
+	border-radius: 4px;
+}
+.sidetag{
+	font-family: Lato-Light,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
+
+	height: 1.4em;
+	color: rgba(102, 102, 102, 1);
+	font-size: 1.5em;
+	padding-left: 10px;
+	line-height: 1.4;
+}
+
+a{
+	text-decoration: none;
+}
+
+#footer{
+    width:100%;
+    background-color:#333;
+    padding:25px;
+}
+
+
+/*
+bookmarks multiselection
+*/
+
+#bookmarks tbody .selected ,#bookmarks tr:nth-child(even) .selected {
+    background-color: brown !important;
+    color: #FFF;
+}
+
+
+
+input[type=text], input[type=password] {
+
+    width: 100% ;
+
+
+
+    display: inline-block;
+
+    border: 1px solid #ccc;
+
+    box-sizing: border-box;
+
+}
+
+
+
+/* Set a style for all buttons */
+/*
+button {
+
+    background-color: #2f2f2f;
+
+    color: white;
+
+    padding: 6px 2px;
+
+    margin: 3px 0;
+
+    border: none;
+
+    cursor: pointer;
+
+    width: 100%;
+
+}
+
+
+
+button:hover {
+
+    opacity: 0.7;
+
+}
+*/
+
+
+
+
+
+
+/* The Modal (background) */
+
+.modal {
+
+	left :65%;
+
+	top:10%;
+
+
+
+    display: none; /* Hidden by default */
+
+     /* Stay in place */
+
+     float: right;
+
+    z-index: 1; /* Sit on top */
+
+    padding:1% 1% 1% 1%;
+
+    width: 32%; /* Full width */
+
+    height:370px;
+
+   /* Enable scroll if needed */
+
+    background-color: rgb(0,0,0); /* Fallback color */
+
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+
+
+}
+
+
+
+/* Modal Content/Box */
+
+.modal-content {
+
+    background-color: #fefefe;
+
+
+
+    border: 1px solid #888;
+
+ }
+
+
+
+.close:hover,
+
+.close:focus {
+
+    color: red;
+
+    cursor: pointer;
+
+}
+
+
+
+/* Add Zoom Animation */
+
+.animate {
+
+    -webkit-animation: animatezoom 0.6s;
+
+    animation: animatezoom 0.6s
+
+}
+
+
+
+@-webkit-keyframes animatezoom {
+
+    from {-webkit-transform: scale(0)}
+
+    to {-webkit-transform: scale(1)}
+
+}
+
+
+
+@keyframes animatezoom {
+
+    from {transform: scale(0)}
+
+    to {transform: scale(1)}
+
+}
+
+
+table.dataTable {
+    clear: both;
+    margin-top: 6px !important;
+    margin-bottom: 6px !important;
+    max-width: none !important;
+    border-collapse: separate !important
+}
+table.dataTable td,
+table.dataTable th {
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box
+}
+table.dataTable td.dataTables_empty,
+table.dataTable th.dataTables_empty {
+    text-align: center
+}
+table.dataTable.nowrap th,
+table.dataTable.nowrap td {
+    white-space: nowrap
+}
+div.dataTables_wrapper div.dataTables_length label {
+    font-weight: normal;
+    text-align: left;
+    white-space: nowrap
+}
+div.dataTables_wrapper div.dataTables_length select {
+    width: 75px;
+    display: inline-block
+}
+div.dataTables_wrapper div.dataTables_filter {
+    text-align: right
+}
+div.dataTables_wrapper div.dataTables_filter label {
+    font-weight: normal;
+    white-space: nowrap;
+    text-align: left
+}
+div.dataTables_wrapper div.dataTables_filter input {
+    margin-left: 0.5em;
+    display: inline-block;
+}
+div.dataTables_wrapper div.dataTables_info {
+    padding-top: 0.85em;
+    white-space: nowrap
+}
+div.dataTables_wrapper div.dataTables_paginate {
+    margin: 0;
+    white-space: nowrap;
+    text-align: right
+}
+div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+    margin: 2px 0;
+    white-space: nowrap;
+    justify-content: flex-end
+}
+div.dataTables_wrapper div.dataTables_processing {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    margin-left: -100px;
+    margin-top: -26px;
+    text-align: center;
+    padding: 1em 0
+}
+table.dataTable thead>tr>th.sorting_asc,
+table.dataTable thead>tr>th.sorting_desc,
+table.dataTable thead>tr>th.sorting,
+table.dataTable thead>tr>td.sorting_asc,
+table.dataTable thead>tr>td.sorting_desc,
+table.dataTable thead>tr>td.sorting {
+    padding-right: 30px
+}
+table.dataTable thead>tr>th:active,
+table.dataTable thead>tr>td:active {
+    outline: none
+}
+table.dataTable thead .sorting,
+table.dataTable thead .sorting_asc,
+table.dataTable thead .sorting_desc,
+table.dataTable thead .sorting_asc_disabled,
+table.dataTable thead .sorting_desc_disabled {
+    cursor: pointer;
+    position: relative
+}
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:before,
+table.dataTable thead .sorting_desc_disabled:after {
+    position: absolute;
+    bottom: 0.9em;
+    display: block;
+    opacity: 0.3
+}
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_desc_disabled:before {
+    right: 1em;
+    content: "\2191"
+}
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:after {
+    right: 0.5em;
+    content: "\2193"
+}
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_desc:after {
+    opacity: 1
+}
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_desc_disabled:after {
+    opacity: 0
+}
+div.dataTables_scrollHead table.dataTable {
+    margin-bottom: 0 !important
+}
+div.dataTables_scrollBody table {
+    border-top: none;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important
+}
+div.dataTables_scrollBody table thead .sorting:after,
+div.dataTables_scrollBody table thead .sorting_asc:after,
+div.dataTables_scrollBody table thead .sorting_desc:after {
+    display: none
+}
+div.dataTables_scrollBody table tbody tr:first-child th,
+div.dataTables_scrollBody table tbody tr:first-child td {
+    border-top: none
+}
+div.dataTables_scrollFoot>.dataTables_scrollFootInner {
+    box-sizing: content-box
+}
+div.dataTables_scrollFoot>.dataTables_scrollFootInner>table {
+    margin-top: 0 !important;
+    border-top: none
+}
+@media screen and (max-width: 767px) {
+    div.dataTables_wrapper div.dataTables_length,
+    div.dataTables_wrapper div.dataTables_filter,
+    div.dataTables_wrapper div.dataTables_info,
+    div.dataTables_wrapper div.dataTables_paginate {
+        text-align: center
+    }
+}
+table.dataTable.table-sm>thead>tr>th {
+    padding-right: 20px
+}
+table.dataTable.table-sm .sorting:before,
+table.dataTable.table-sm .sorting_asc:before,
+table.dataTable.table-sm .sorting_desc:before {
+    top: 5px;
+    right: 0.85em
+}
+table.dataTable.table-sm .sorting:after,
+table.dataTable.table-sm .sorting_asc:after,
+table.dataTable.table-sm .sorting_desc:after {
+    top: 5px
+}
+table.table-bordered.dataTable th,
+table.table-bordered.dataTable td {
+    border-left-width: 0
+}
+table.table-bordered.dataTable th:last-child,
+table.table-bordered.dataTable th:last-child,
+table.table-bordered.dataTable td:last-child,
+table.table-bordered.dataTable td:last-child {
+    border-right-width: 0
+}
+table.table-bordered.dataTable tbody th,
+table.table-bordered.dataTable tbody td {
+    border-bottom-width: 0
+}
+div.dataTables_scrollHead table.table-bordered {
+    border-bottom-width: 0
+}
+div.table-responsive>div.dataTables_wrapper>div.row {
+    margin: 0
+}
+div.table-responsive>div.dataTables_wrapper>div.row>div[class^="col-"]:first-child {
+    padding-left: 0
+}
+div.table-responsive>div.dataTables_wrapper>div.row>div[class^="col-"]:last-child {
+    padding-right: 0
+}
+
+
+
+body{
+  font-family: 'Raleway', sans-serif;
+  height:100%;
+  margin-top :0px;
+
+}
+
+#menu-nav{
+  position: relative;
+  float:left;
+  width:100%;
+  height:auto;
+  background-color:#c63d0f;
+  border-radius:4px;
+  overflow:hidden;
+  box-shadow:0 0 5px rgba(0,0,0,0.3);
+  margin-top: -5px;
+  margin-bottom: 100px;
+}
+
+#navigation-bar {
+  width:100%;
+}
+
+#navigation-bar ul {
+    margin:0; padding:0;
+    list-style:none;
+    width:100%;
+    border-radius:4px;
+    overflow:hidden;
+}
+#navigation-bar li {
+    float:left;
+    padding:0;
+    font-family: 'Raleway', sans-serif;
+    margin:0;
+    width:25%;
+}
+#navigation-bar a {
+    color:#ecf0f1;
+    font-size:20px;
+    text-decoration:none; text-align:center;
+    width:100%;
+    padding:10px 0;
+    display:block; position:relative;
+    transition: all 0.3s ease;
+}
+#navigation-bar a:hover {color:#007bff;}
+
+#navigation-bar a:before {
+  content:'';
+  transition:all .4s ease-in-out;
+  position:absolute; right:50%; left:50%; bottom:0;
+  display:block;
+  height:2px;
+  background-color:#007bff;
+}
+
+#navigation-bar li:hover a:before, #navigation-bar a:hover:before {right:0; left:0;}
+#navigation-bar span {display:block;}
+
+#unique{
+    float:left;
+    margin-right:35%;
+  margin-bottom: 5%;
+  margin-left:6%;
+}
+
+
+
+#trash{
+  cursor: pointer;
+}
+
+#main_body{
+    margin-left: 4%;
+    margin-bottom:380px;
+}
+thead{
+  border:1px solid black;
+    background-color: #333;
+    color:white;
+}
+th{
+   padding-left:15px;
+}
+
+#dele{
+    padding-left:5px;
+}
+#copys{
+    padding-left:5px;
+}
+/* unvisited link */
+a#url_link:link {
+    color: black;
+}
+
+td#title{
+    padding-left:15px;
+}
+
+.ro{
+  border-bottom: 1px solid #ddd;
+  background-color:#f2f2f2;
+}
+
+table#bookmarks tr:nth-child(even) {
+   background-color:white;
+}
+
+
+
+
+
+
+
+input[type=search] {
+
+     border: 2px solid red;
+     border-radius: 4px;
+     background-image: url('https://www.w3schools.com/css/searchicon.png');
+     background-position: 5px 4px;
+     background-repeat: no-repeat;
+     padding-left: 30px;
+}
+
+#body{
+    height:100%;
+    background-color:lightgray;
+
+}
+
+.dataTables_filter label
+{
+     float:left;
+     width:85%;
+}
+
+
+.js-link, #option{
+  -webkit-transition: background .35s ease;
+  transition: background .35s ease;
+}
+
+/*Base*/
+* {
+  box-sizing: border-box;
+}
+
+
+/*Typography*/
+#drops{
+  font: 16px Verdana;
+}
+
+/*Layout*/
+/*Dropdown*/
+.dropdown {
+  border: .1em solid #c0cdd1;
+}
+
+#link {
+
+  display: block;
+  padding: .5em;
+  color: #000;
+  text-decoration: none;
+}
+
+#ajsa{
+  float:right;
+}
+.fa-chevron-down{
+    float:right;
+}
+#link:focus, #link:hover {
+  background: #ecf0f1;
+}
+#link:active {
+  background: #fbfcfc;
+}
+
+
+
+/*List*/
+#drop{
+    margin-left:-35px;
+    list-style-type:none;
+  display: none;
+}
+
+#dropdrop{
+    width:inherit;
+}
+#option{
+    font-size: 1em;
+  padding: .5em;
+  cursor: pointer;
+}
+#option:not(:first-child) {
+  border-top: .1em dashed #dde4e6;
+}
+#option:last-child {
+  color: #ad0000;
+}
+#option:focus, #option:hover {
+  background: #ecf0f1;
+}
+#option:active {
+  background: #fbfcfc;
+}
+
+
+
+</style>
+
+
+<script>
+
+// Get the modal
+
+var modal = document.getElementById('id01');
+
+
+
+// When the user clicks anywhere outside of the modal, close it
+
+window.onclick = function(event) {
+
+    if (event.target == modal) {
+
+        modal.style.display = "none";
+
+    }
+
+}
+
+</script>
+<script>
+  $(function(){
+    $('#multiple').click(function() {
+
+      $("#bookmarks tr").click(function(){
+   $(this).toggleClass('selected');
+   var value=$(this).find('td:first').html();
+  // alert(value);
+});
+
+$('#trash,#share').on('click', function(e){
+    var selected = [];
+    $("#table tr.selected").each(function(){
+        selected.push($('td:first', this).html());
+    });
+    alert(selected);
+});
+    });
+});
+
+</script>
+
+<script>
+
+    function myBoobs(x){
+       var table = $( '#bookmarks' ).DataTable();
+        table.search(x.innerHTML).draw();
+
+    }
+
+</script>
+
+
+
+
+
+
+

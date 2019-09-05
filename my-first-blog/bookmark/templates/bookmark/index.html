@@ -1,0 +1,283 @@
+<!--<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<html>
+
+     {% if user.is_authenticated %}
+     <li>User: {{ user.get_username }}</li>
+     <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
+   {% else %}
+     <li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
+   {% endif %}
+
+    <head><meta name="google-site-verification" content="Ww3R3mm6F9mNEI-SPh0F-rF_iMid23n2vSgk5rgbK9I" /></head>
+<meta name="google-signin-client_id" content="311616888813-st3qb63jeiofnl1n1ahsi8ncuo186ash.apps.googleusercontent.com">
+<div class="g-signin2" data-onsuccess="onSignIn"></div>
+<script>
+    function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+
+  var id_token = googleUser.getAuthResponse().id_token;
+
+      $.ajax({
+        url: '/verify',
+        data: {
+          'id_token': id_token
+        },
+        dataType: 'json',
+        success: function (data) {
+          if (data.is_verified) {
+            alert("Verified");
+          }
+        }
+      });
+
+}
+
+</script>
+
+
+
+
+
+<a href="#" onclick="signOut();">Sign out</a>
+<script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+</script>
+
+<p>
+THE BEST WEBSITE IN THE WORLD is coming here soon.
+<br>
+Hold your hearts bcoz. they can fall for it ;).
+</p>
+
+<a href= "#"> dashboard</a>
+<br>
+<a href="/getting-started">Getting Started</a>
+<br>
+<a href="/contact"> Contact Us</a>
+<br>
+{% if user.is_authenticated %}
+ <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
+ {% else %}
+<li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
+{% endif %}
+<a href="/accounts/password_change">Pasword Change</a>
+<br>
+
+{% for d in data %}
+    <div>
+        <p>title: {{ d.title }}</p>
+        <br>
+        <p>url: {{d.url }}</p>
+        <br>
+        <p>date: {{ d.pub_date }}</p>
+    </div>
+{% endfor %}
+
+</html>
+
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Global Bookmark</title>
+	<link rel="stylesheet" type="text/css" href="user.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+</head>
+<body>
+	<div id='menu-nav'>
+  		<div id='navigation-bar'>
+		    <ul>
+		      <li class='menu-sub-nav current-item'><a href='#'><i class='fa fa-home'></i><span>Global Bookmark</span></a></li>
+		      <li id="about" class='menu-sub-nav'><a href='/getting-started'><i class='fa fa-rocket'></i><span>Getting Started</span></a></li>
+		      <li id="contact" class='menu-sub-nav'><a href='/contact'><i class='fa fa-book'></i><span>Contact</span></a></li>
+		       <li id="user" class='menu-sub-nav'><a href='/accounts/logout'><i class='fa fa-user '></i><span>Sign Out</span></a></li>
+		    </ul>
+  		</div>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<table style="width: 100%" id="unique">
+		<tr>
+			<td>
+				<div id ="search1">
+	<div id="search" class="input-group">
+		 <input type="text" class="form-control" placeholder=" eg: tag:title " aria-describedby="basic-addon2">
+		<span id="searchbutton" class="input-group-addon" id="basic-addon2">Search</span>
+	</div>
+</div>
+			</td>
+			<td>
+				<button class="btn btn-dark" id="trash" title="Delete"><i class="fa fa-trash"></i></button>
+			</td>
+			<td>
+				<button class="btn btn-dark" id="trash" title="Share"><i class="fa fa-share-alt"></i></button>
+			</td>
+		</tr>
+	</table>
+	<table style="width: 65%" id="bookmarks">
+		<thead>
+			<tr>
+				<th>Tag:Title</th>
+				<th>Frequency</th>
+				<th>Date</th>
+				<th>Share</th>
+				<th>Copy</th>
+			</tr>
+		</thead>
+	{% for bookmark in data %}
+		<tr class="ro">
+			<td>
+				{{ bookmark.title }}
+			</td>
+			<td>
+				{{ bookmark.freq }}
+			</td>
+			<td>
+				{{ bookmark.pub_date }}
+			</td>
+			<td>
+				<button class="btn btn-link" id="trash" title="Share"><i class="fa fa-share-alt"></i></button>
+			</td>
+			<td>
+				<button class="btn btn-link" id="trash" title="copy to clipboard"><i class="fa fa-clipboard"></i></button>
+			</td>
+		</tr>
+		{% endfor %}
+	</table>
+	<table  id="index">
+		<tr>
+			<td width="63%">
+				Number of bookmark per page:
+			</td>
+			<td>
+				<button class="btn btn-dark" id="trash">10</button>
+			</td>
+			<td >
+				<button class="btn btn-dark" id="trash">25</button>
+			</td>
+			<td>
+				<button class="btn btn-dark" id="trash">50</button>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
+<style>
+<body{
+	  background-color: #ecf0f1;
+  font-family: 'Raleway', sans-serif;
+  margin-top :0px;
+}
+
+#menu-nav{
+  position: relative;
+  float:left;
+  width:100%;
+  height:auto;
+  background-color:#ecf0f1;
+  border-radius:4px;
+  overflow:hidden;
+  box-shadow:0 0 5px rgba(0,0,0,0.3);
+  margin-top: -5px;
+  margin-bottom: 50px;
+}
+
+#navigation-bar {
+  width:100%;
+}
+
+#navigation-bar ul {
+    margin:0; padding:0;
+    list-style:none;
+    width:100%;
+    border-radius:4px;
+    overflow:hidden;
+}
+#navigation-bar li {
+    float:left;
+    padding:0;
+    font-family: 'Raleway', sans-serif;
+    margin:0;
+    width:25%;
+}
+#navigation-bar a {
+    color:#84848;
+    font-size:20px;
+    text-decoration:none; text-align:center;
+    width:100%;
+    padding:10px 0;
+    display:block; position:relative;
+    transition: all 0.3s ease;
+}
+#navigation-bar a:hover {color:#e74c3c;}
+
+#navigation-bar a:before {
+  content:'';
+  transition:all .4s ease-in-out;
+  position:absolute; right:50%; left:50%; bottom:0;
+  display:block;
+  height:2px;
+  background-color:#e74c3c;
+}
+
+#navigation-bar li:hover a:before, #navigation-bar a:hover:before {right:0; left:0;}
+#navigation-bar span {display:block;}
+
+#unique{
+  margin-bottom: 5%;
+}
+#search1{
+  margin-left: 5%;
+  margin-right: 25%;
+
+}
+
+#searchbutton:hover{
+  cursor: pointer;
+  color:#e74c3c;
+}
+
+#trash{
+  cursor: pointer;
+}
+#bookmarks{
+  margin-left: 5%;
+  margin-bottom: 20px ;
+  background-color:#ecf0f1;
+}
+
+#index{
+  margin-left: 5%;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+}
+thead{
+  border:1px solid black;
+}
+
+.ro{
+  border-bottom: 1px solid #ddd;
+}
+</style>
+
+
+
+
+

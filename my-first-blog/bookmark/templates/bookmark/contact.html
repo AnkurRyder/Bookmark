@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<style>
+    body{
+	  background-color: lightgray;
+  font-family: 'Raleway', sans-serif;
+  margin-top :0px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+#menu-nav{
+  position: relative;
+  float:left;
+  width:100%;
+  height:auto;
+  background-color:#c63d0f;
+  border-radius:4px;
+  overflow:hidden;
+  box-shadow:0 0 5px rgba(0,0,0,0.3);
+  margin-bottom: 100px;
+}
+
+#navigation-bar {
+  width:100%;
+}
+
+#navigation-bar ul {
+    margin:0; padding:0;
+    list-style:none;
+    width:100%;
+    border-radius:4px;
+    overflow:hidden;
+}
+#navigation-bar li {
+    float:left;
+    padding:0;
+    margin:0;
+    width:25%;
+}
+#navigation-bar a {
+    color:#ecf0f1;
+    font-size:20px;
+    text-decoration:none; text-align:center;
+    width:100%;
+    padding:10px 0;
+    display:block; position:relative;
+    transition: all 0.3s ease;
+}
+#navigation-bar a:hover {color:#007bff;}
+
+#navigation-bar a:before {
+  content:'';
+  transition:all .4s ease-in-out;
+  position:absolute; right:50%; left:50%; bottom:0;
+  display:block;
+  height:2px;
+  background-color:#007bff;
+}
+
+#navigation-bar li:hover a:before, #navigation-bar a:hover:before {right:0; left:0;}
+#navigation-bar span {display:block;}
+
+* {
+  box-sizing: border-box;
+}
+
+.section {
+  position: static;
+  width: 900px;
+  max-width: 80%;
+  border: 2px solid #333;
+  text-align: center;
+  margin: 20px auto ;
+}
+
+
+#text {
+  border: 2px;
+  color: #444;
+}
+.section h1 {
+    padding-top:2%;
+  position: relative;
+  margin-top: -14px;
+  display: inline-block;
+  letter-spacing: 4px;
+}
+
+
+@media (max-width: 685px) {
+.top-border {
+  width: 18%;
+  }
+}
+
+.section p {
+  width: 61%;
+  margin: 20px auto 40px auto;
+  line-height: 30px;
+}
+
+.section a {
+  outline: 0;
+  display: inline-block;
+  padding: 20px;
+  margin-bottom: 40px;
+  width: 440px;
+  max-width: 80%;
+  background-color: #333;
+  color: #fff;
+  font-size: 22px;
+  letter-spacing: 3px;
+  transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+}
+
+.section a:hover {
+  background-color: #1D222D;
+}
+
+.section a:link, .section a:visited, .section a:link:hover, .section a:visited:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+@media (max-width: 500px) {
+  .top-border {
+    display: none;
+  }
+  .section {
+  border-top: 2px solid #333;
+  }
+  .section h1 {
+    margin: 20px 6px;
+  }
+}
+
+.footer{
+    width:100%;
+    position:fixed;
+    bottom:0px;
+  padding: 10px;
+  background-color: #292929;
+  margin-bottom: -8px;
+}
+
+.footer p{
+  color: white;
+}
+</style>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Global Bookmark</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+	<div id='menu-nav'>
+  		<div id='navigation-bar'>
+		    <ul>
+		      <li class='menu-sub-nav current-item'><a href='/'><i class='fa fa-home'></i><span>Global Bookmark</span></a></li>
+		      <li id="about" class='menu-sub-nav'><a href='/getting-started'><i class='fa fa-rocket'></i><span>Getting Started</span></a></li>
+		      <li id="contact" class='menu-sub-nav'><a href='/contact'><i class='fa fa-book'></i><span>Contact</span></a></li>
+		      <li id="contact" class='menu-sub-nav'><a href='/signin'><i class='fa fa-user'></i><span>SignIn</span></a></li>
+		    </ul>
+  		</div>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br><br>
+	<div class="section">
+  <div class="top-border left"></div>
+  <div class="top-border right"></div>
+  <div id="text">
+  <h1>CONTACT US</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><p>
+  	For any technical issues contact us at:
+  	<strong>
+  	aj17@iitbbs.ac.in</strong>
+  	<br>
+  	For any feedback or support contact us at:
+  	<strong>
+  	aj17@iitbbs.ac.in</strong>
+  </p>
+    <a href="#">CONTACT US</a>
+</div>
+</div>
+<br>
+	<br>
+	<br>
+	<br>
+<div class="footer"><footer>
+	<p>
+		Addrs : IIT Bhubaneswar Arugul Campus.
+	</br>
+	Ph.no. : +918895745290.
+</p>
+</footer></div>
+</body>
+</html>
